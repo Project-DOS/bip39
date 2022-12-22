@@ -1,7 +1,7 @@
 import * as createHash from 'create-hash';
 import { pbkdf2, pbkdf2Sync } from 'pbkdf2';
 import { _default as _DEFAULT_WORDLIST, wordlists } from './_wordlists';
-const { randomBytes } = require('expo-randombytes');
+const { randomBytes } = require('@dreamoslib/expo-random-bytes');
 
 let DEFAULT_WORDLIST: string[] | undefined = _DEFAULT_WORDLIST;
 

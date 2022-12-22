@@ -1,6 +1,6 @@
 {
   "name": "@dreamoslib/bip39-mobile",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Bitcoin BIP39: Mnemonic code for generating deterministic keys",
   "main": "src/index.js",
   "types": "./types/index.d.ts",
@@ -27,12 +27,10 @@
     "types"
   ],
   "dependencies": {
+    "@dreamoslib/expo-random-bytes": "^0.1.0",
     "@types/node": "11.11.6",
-    "@types/typedarray-to-buffer": "^4.0.0",
     "create-hash": "^1.1.0",
-    "expo-randombytes": "^1.0.1",
-    "pbkdf2": "^3.0.9",
-    "typedarray-to-buffer": "^4.0.0"
+    "pbkdf2": "^3.0.9"
   },
   "devDependencies": {
     "@types/create-hash": "1.2.0",
