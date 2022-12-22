@@ -1,6 +1,6 @@
 {
   "name": "@dreamoslib/bip39-mobile",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Bitcoin BIP39: Mnemonic code for generating deterministic keys",
   "main": "src/index.js",
   "types": "./types/index.d.ts",
