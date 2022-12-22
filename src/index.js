@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const createHash = require("create-hash");
 const pbkdf2_1 = require("pbkdf2");
-const expo_random_1 = require("expo-random");
+const { randomBytes: getRandomBytes } = require('@dreamoslib/tweetnacl');
 const toBuffer = require('typedarray-to-buffer');
 const _wordlists_1 = require("./_wordlists");
 let DEFAULT_WORDLIST = _wordlists_1._default;
@@ -12,7 +12,7 @@ const INVALID_CHECKSUM = 'Invalid mnemonic checksum';
 const WORDLIST_REQUIRED = 'A wordlist is required but a default could not be found.\n' +
     'Please pass a 2048 word array explicitly.';
 function randomBytes(byteCount) {
-    return toBuffer(expo_random_1.getRandomBytes(byteCount));
+    return toBuffer(getRandomBytes(byteCount));
 }
 function pbkdf2Promise(password, saltMixin, iterations, keylen, digest) {
     return Promise.resolve().then(() => new Promise((resolve, reject) => {

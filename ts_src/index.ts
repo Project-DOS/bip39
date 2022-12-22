@@ -1,6 +1,6 @@
 import * as createHash from 'create-hash';
 import { pbkdf2, pbkdf2Sync } from 'pbkdf2';
-import { getRandomBytes } from 'expo-random';
+const { randomBytes: getRandomBytes } = require('@dreamoslib/tweetnacl');
 const toBuffer = require('typedarray-to-buffer');
 import { _default as _DEFAULT_WORDLIST, wordlists } from './_wordlists';
 
