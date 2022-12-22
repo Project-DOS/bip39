@@ -6,9 +6,7 @@
     "declaration": true,
     "declarationDir": "./types",
     "rootDir": "./ts_src",
-    "types": [
-      "node"
-    ],
+    "types": ["node"],
     "allowJs": false,
     "strict": true,
     "noImplicitAny": true,
@@ -23,12 +21,6 @@
     "noUnusedParameters": true,
     "resolveJsonModule": true
   },
-  "include": [
-      "ts_src/**/*.ts",
-      "ts_src/**/*.json"
-  ],
-  "exclude": [
-      "**/*.spec.ts",
-      "node_modules/**/*"
-  ]
+  "include": ["ts_src/**/*.ts", "ts_src/**/*.json"],
+  "exclude": ["**/*.spec.ts", "node_modules/**/*"]
 }

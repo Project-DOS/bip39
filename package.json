@@ -1,6 +1,6 @@
 {
-  "name": "bip39",
-  "version": "3.0.4",
+  "name": "@dreamoslib/bip39-mobile",
+  "version": "0.1.0",
   "description": "Bitcoin BIP39: Mnemonic code for generating deterministic keys",
   "main": "src/index.js",
   "types": "./types/index.d.ts",
@@ -17,14 +17,6 @@
     "unit": "tape test/*.js",
     "update": "node -e \"require('./util/wordlists').update()\""
   },
-  "author": "Wei Lu",
-  "contributors": [
-    {
-      "name": "Daniel Cousens",
-      "email": "email@dcousens.com",
-      "url": "http://dcousens.com"
-    }
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/bitcoinjs/bip39.git"
@@ -36,9 +28,12 @@
   ],
   "dependencies": {
     "@types/node": "11.11.6",
+    "@types/typedarray-to-buffer": "^4.0.0",
     "create-hash": "^1.1.0",
+    "expo-random": "^13.0.0",
     "pbkdf2": "^3.0.9",
-    "randombytes": "^2.0.1"
+    "randombytes": "^2.0.1",
+    "typedarray-to-buffer": "^4.0.0"
   },
   "devDependencies": {
     "@types/create-hash": "1.2.0",

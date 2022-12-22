@@ -1,6 +1,7 @@
 import * as createHash from 'create-hash';
 import { pbkdf2, pbkdf2Sync } from 'pbkdf2';
-import * as randomBytes from 'randombytes';
+import { getRandomBytes } from 'expo-random';
+const toBuffer = require('typedarray-to-buffer');
 import { _default as _DEFAULT_WORDLIST, wordlists } from './_wordlists';
 
 let DEFAULT_WORDLIST: string[] | undefined = _DEFAULT_WORDLIST;
@@ -11,6 +12,10 @@ const INVALID_CHECKSUM = 'Invalid mnemonic checksum';
 const WORDLIST_REQUIRED =
   'A wordlist is required but a default could not be found.\n' +
   'Please pass a 2048 word array explicitly.';
+
+function randomBytes(byteCount: number): Buffer {
+  return toBuffer(getRandomBytes(byteCount));
+}
 
 function pbkdf2Promise(
   password: string | Buffer,
