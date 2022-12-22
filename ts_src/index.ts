@@ -1,8 +1,7 @@
 import * as createHash from 'create-hash';
 import { pbkdf2, pbkdf2Sync } from 'pbkdf2';
-const { randomBytes: getRandomBytes } = require('@dreamoslib/tweetnacl');
-const toBuffer = require('typedarray-to-buffer');
 import { _default as _DEFAULT_WORDLIST, wordlists } from './_wordlists';
+const { randomBytes } = require('expo-randombytes');
 
 let DEFAULT_WORDLIST: string[] | undefined = _DEFAULT_WORDLIST;
 
@@ -12,10 +11,6 @@ const INVALID_CHECKSUM = 'Invalid mnemonic checksum';
 const WORDLIST_REQUIRED =
   'A wordlist is required but a default could not be found.\n' +
   'Please pass a 2048 word array explicitly.';
-
-function randomBytes(byteCount: number): Buffer {
-  return toBuffer(getRandomBytes(byteCount));
-}
 
 function pbkdf2Promise(
   password: string | Buffer,
@@ -200,7 +195,7 @@ export function generateMnemonic(
   if (strength % 32 !== 0) {
     throw new TypeError(INVALID_ENTROPY);
   }
-  rng = rng || randomBytes;
+  rng = rng || (randomBytes as (size: number) => Buffer);
 
   return entropyToMnemonic(rng(strength / 8), wordlist);
 }
